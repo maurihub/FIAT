@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fiat Plan Argentina | Sitio Oficial 2026</title>
+    <title>Fiat Plan Argentina | Catálogo Oficial 2026</title>
     <link href="https://googleapis.com" rel="stylesheet">
     <link rel="stylesheet" href="https://cloudflare.com">
     <style>
@@ -13,175 +13,194 @@
         body { 
             background-color: var(--fiat-grey);
             background-image: url("data:image/svg+xml,%3Csvg xmlns='http://w3.org' width='200' height='100' viewBox='0 0 200 100'%3E%3Ctext x='50%25' y='50%25' font-family='Arial' font-size='35' font-weight='900' fill='%23000' fill-opacity='0.03' text-anchor='middle' dominant-baseline='middle'%3EFIAT%3C/text%3E%3C/svg%3E");
+            scroll-behavior: smooth;
         }
 
         nav {
-            background: #fff;
-            padding: 15px 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 5px solid var(--fiat-red);
-            position: sticky;
-            top: 0; z-index: 1000;
+            background: #fff; padding: 15px 5%; display: flex; justify-content: space-between;
+            align-items: center; border-bottom: 5px solid var(--fiat-red); position: sticky; top: 0; z-index: 1000;
         }
         .logo-fiat { height: 40px; }
 
         .hero {
-            background: var(--fiat-dark);
-            padding: 60px 20px;
-            color: white;
-            text-align: center;
-            border-bottom: 6px solid var(--fiat-red);
+            background: var(--fiat-dark); padding: 60px 20px; color: white; text-align: center; border-bottom: 6px solid var(--fiat-red);
         }
 
         .benefits-bar {
-            background: #fff;
-            padding: 20px;
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-            border-bottom: 1px solid #ddd;
+            background: #fff; padding: 20px; display: flex; justify-content: center; gap: 25px; flex-wrap: wrap; border-bottom: 1px solid #ddd;
         }
         .benefit { display: flex; align-items: center; font-weight: 700; color: var(--fiat-red); font-size: 0.85rem; }
         .benefit i { margin-right: 8px; }
 
         .container { max-width: 1200px; margin: 0 auto; padding: 40px 20px; }
-        .grid-modelos { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+        .grid-modelos { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
 
         .card {
-            background: #fff;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-            text-align: center;
-            transition: 0.3s;
+            background: #fff; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            transition: 0.3s; display: flex; flex-direction: column;
         }
-        .card:hover { transform: translateY(-5px); }
+        .card:hover { transform: translateY(-5px); border: 1px solid var(--fiat-red); }
         
-        .img-box { height: 220px; background: #fff; display: flex; align-items: center; justify-content: center; overflow: hidden; }
-        .img-box img { width: 100%; height: 100%; object-fit: cover; }
+        .img-box { height: 200px; background: #eee; overflow: hidden; position: relative; }
+        .img-box img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
+        .card:hover .img-box img { transform: scale(1.1); }
         
-        .card-body { padding: 20px; }
-        .card-body h3 { font-size: 1.5rem; font-weight: 900; margin-bottom: 15px; color: var(--fiat-dark); }
+        .card-body { padding: 25px; flex-grow: 1; display: flex; flex-direction: column; }
+        .card-body h3 { font-size: 1.4rem; font-weight: 900; margin-bottom: 10px; color: var(--fiat-dark); display: flex; align-items: center; }
+        .card-body h3 i { margin-right: 10px; color: var(--fiat-red); font-size: 1.2rem; }
+        .card-body p { font-size: 0.9rem; color: #555; margin-bottom: 20px; line-height: 1.4; flex-grow: 1; }
 
         .btn-ws {
-            display: inline-block;
-            background: #25d366;
-            color: #fff;
-            padding: 12px 20px;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: 700;
+            display: block; background: #25d366; color: #fff; padding: 12px;
+            text-decoration: none; border-radius: 5px; font-weight: 700; text-align: center;
         }
 
-        .contact-section { background: var(--fiat-dark); color: white; padding: 60px 5%; text-align: center; }
+        .contact-section { background: var(--fiat-dark); color: white; padding: 80px 5%; text-align: center; }
         .form-container { max-width: 500px; margin: 0 auto; }
         .form-group { margin-bottom: 15px; }
-        .form-group input, .form-group select { width: 100%; padding: 15px; border-radius: 5px; border: none; }
+        .form-group input, .form-group select { width: 100%; padding: 15px; border-radius: 5px; border: none; font-size: 1rem; }
         
-        .btn-submit { background: var(--fiat-red); color: #fff; padding: 18px; width: 100%; border: none; border-radius: 5px; font-weight: 900; cursor: pointer; }
+        .btn-submit { background: var(--fiat-red); color: #fff; padding: 18px; width: 100%; border: none; border-radius: 5px; font-weight: 900; cursor: pointer; text-transform: uppercase; }
 
         .ws-float {
-            position: fixed;
-            bottom: 20px; right: 20px;
-            background: #25d366; color: #fff;
-            width: 60px; height: 60px;
-            border-radius: 50%; display: flex; justify-content: center; align-items: center;
-            font-size: 30px; box-shadow: 0 5px 15px rgba(0,0,0,0.3); z-index: 2000;
+            position: fixed; bottom: 25px; right: 25px; background: #25d366; color: #fff;
+            width: 65px; height: 65px; border-radius: 50%; display: flex; justify-content: center; align-items: center;
+            font-size: 35px; box-shadow: 0 10px 20px rgba(0,0,0,0.3); z-index: 2000;
         }
 
-        footer { background: #000; color: #555; text-align: center; padding: 30px; font-size: 0.8rem; }
+        footer { background: #000; color: #444; text-align: center; padding: 40px; font-size: 0.8rem; }
     </style>
 </head>
 <body>
 
     <nav>
         <img src="https://wikimedia.org" alt="Fiat" class="logo-fiat">
-        <div style="font-weight: 900; color: var(--fiat-red);">ENTREGA PACTADA 2026</div>
+        <div style="font-weight: 900; color: var(--fiat-red); font-size: 0.8rem;">CONCESIONARIO OFICIAL 2026</div>
     </nav>
 
     <header class="hero">
-        <h1 style="font-size: 2.5rem; font-weight: 900;">MUNDO FIAT</h1>
-        <p>CONCESIONARIO OFICIAL</p>
+        <h1 style="font-size: 3rem; font-weight: 900; text-transform: uppercase;">Gama Fiat Argentina</h1>
+        <p style="letter-spacing: 3px;">TU PRÓXIMO 0KM COMIENZA ACÁ</p>
     </header>
 
     <div class="benefits-bar">
-        <div class="benefit"><i class="fas fa-lock"></i> CUOTA FIJA</div>
+        <div class="benefit"><i class="fas fa-percentage"></i> CUOTA FIJA</div>
         <div class="benefit"><i class="fas fa-id-card"></i> BONIFICACIÓN DNI</div>
-        <div class="benefit"><i class="fas fa-key"></i> LLAVE X LLAVE</div>
+        <div class="benefit"><i class="fas fa-calendar-check"></i> ENTREGA PACTADA</div>
     </div>
 
     <div class="container">
         <div class="grid-modelos">
+            
             <!-- CRONOS -->
             <div class="card">
-                <div class="img-box">
-                    <img src="https://unsplash.com" alt="Fiat Cronos">
-                </div>
+                <div class="img-box"><img src="https://unsplash.com" alt="Cronos"></div>
                 <div class="card-body">
-                    <h3>CRONOS</h3>
+                    <h3><i class="fas fa-car-side"></i> Fiat Cronos</h3>
+                    <p>El sedán fabricado en Córdoba sigue siendo el modelo central de la oferta y el más vendido del país.</p>
                     <a href="https://wa.me" class="btn-ws"><i class="fab fa-whatsapp"></i> CONSULTAR</a>
                 </div>
             </div>
-            <!-- STRADA -->
+
+            <!-- MOBI -->
             <div class="card">
-                <div class="img-box">
-                    <img src="https://unsplash.com" alt="Fiat Strada">
-                </div>
+                <div class="img-box"><img src="https://unsplash.com" alt="Mobi"></div>
                 <div class="card-body">
-                    <h3>STRADA</h3>
+                    <h3><i class="fas fa-leaf"></i> Fiat Mobi</h3>
+                    <p>Específicamente en su versión Trekking, se posiciona como la opción de entrada más económica.</p>
                     <a href="https://wa.me" class="btn-ws"><i class="fab fa-whatsapp"></i> CONSULTAR</a>
                 </div>
             </div>
-            <!-- TORO -->
+
+            <!-- ARGO -->
             <div class="card">
-                <div class="img-box">
-                    <img src="https://unsplash.com" alt="Fiat Toro">
-                </div>
+                <div class="img-box"><img src="https://unsplash.com" alt="Argo"></div>
                 <div class="card-body">
-                    <h3>TORO</h3>
+                    <h3><i class="fas fa-bolt"></i> Fiat Argo</h3>
+                    <p>El hatchback compacto está disponible en versiones como la Drive, ideal para la ciudad.</p>
                     <a href="https://wa.me" class="btn-ws"><i class="fab fa-whatsapp"></i> CONSULTAR</a>
                 </div>
             </div>
+
             <!-- PULSE -->
             <div class="card">
-                <div class="img-box">
-                    <img src="https://unsplash.com" alt="Fiat Pulse">
-                </div>
+                <div class="img-box"><img src="https://unsplash.com" alt="Pulse"></div>
                 <div class="card-body">
-                    <h3>PULSE</h3>
+                    <h3><i class="fas fa-mountain"></i> Fiat Pulse</h3>
+                    <p>SUV compacto que suele ofrecerse en planes de financiación parcial o total con beneficios directos.</p>
                     <a href="https://wa.me" class="btn-ws"><i class="fab fa-whatsapp"></i> CONSULTAR</a>
                 </div>
             </div>
+
             <!-- FASTBACK -->
             <div class="card">
-                <div class="img-box">
-                    <img src="https://unsplash.com" alt="Fiat Fastback">
-                </div>
+                <div class="img-box"><img src="https://unsplash.com" alt="Fastback"></div>
                 <div class="card-body">
-                    <h3>FASTBACK</h3>
+                    <h3><i class="fas fa-gem"></i> Fiat Fastback</h3>
+                    <p>El SUV con silueta crossover es una de las incorporaciones más recientes al catálogo de ahorro.</p>
                     <a href="https://wa.me" class="btn-ws"><i class="fab fa-whatsapp"></i> CONSULTAR</a>
                 </div>
             </div>
+
+            <!-- STRADA -->
+            <div class="card">
+                <div class="img-box"><img src="https://unsplash.com" alt="Strada"></div>
+                <div class="card-body">
+                    <h3><i class="fas fa-truck-pickup"></i> Fiat Strada</h3>
+                    <p>Pick-up pequeña disponible en versiones como Freedom CD, líder en su segmento.</p>
+                    <a href="https://wa.me" class="btn-ws"><i class="fab fa-whatsapp"></i> CONSULTAR</a>
+                </div>
+            </div>
+
+            <!-- TORO -->
+            <div class="card">
+                <div class="img-box"><img src="https://unsplash.com" alt="Toro"></div>
+                <div class="card-body">
+                    <h3><i class="fas fa-shredder"></i> Fiat Toro</h3>
+                    <p>La pick-up intermedia está vigente en versiones como la Freedom nafta, robustez y confort.</p>
+                    <a href="https://wa.me" class="btn-ws"><i class="fab fa-whatsapp"></i> CONSULTAR</a>
+                </div>
+            </div>
+
+            <!-- TITANO -->
+            <div class="card">
+                <div class="img-box"><img src="https://unsplash.com" alt="Titano"></div>
+                <div class="card-body">
+                    <h3><i class="fas fa-shield-alt"></i> Fiat Titano</h3>
+                    <p>La nueva pick-up mediana de la marca ya cuenta con planes de ahorro para la versión Freedom.</p>
+                    <a href="https://wa.me" class="btn-ws"><i class="fab fa-whatsapp"></i> CONSULTAR</a>
+                </div>
+            </div>
+
+            <!-- FIORINO -->
+            <div class="card">
+                <div class="img-box"><img src="https://unsplash.com" alt="Fiorino"></div>
+                <div class="card-body">
+                    <h3><i class="fas fa-box-open"></i> Fiat Fiorino</h3>
+                    <p>En su versión Endurance, se ofrece como la opción principal para el segmento utilitario.</p>
+                    <a href="https://wa.me" class="btn-ws"><i class="fab fa-whatsapp"></i> CONSULTAR</a>
+                </div>
+            </div>
+
         </div>
     </div>
 
-    <section class="contact-section">
+    <section class="contact-section" id="contacto">
         <div class="form-container">
-            <h2 style="color:var(--fiat-red); margin-bottom:10px;">RECIBIR ASESORAMIENTO</h2>
-            <p style="margin-bottom:30px;">Bonificaciones exclusivas con DNI.</p>
-            <form>
-                <div class="form-group"><input type="text" placeholder="Nombre y Apellido" required></div>
-                <div class="form-group"><input type="tel" placeholder="Tu WhatsApp" required></div>
+            <h2 style="color:var(--fiat-red); margin-bottom:10px;">CONSULTAR AHORA</h2>
+            <p style="margin-bottom:30px;">Recibí presupuesto personalizado por WhatsApp.</p>
+            <form action="#">
+                <div class="form-group"><input type="text" placeholder="Tu Nombre" required></div>
+                <div class="form-group"><input type="tel" placeholder="WhatsApp" required></div>
                 <div class="form-group">
                     <select required>
-                        <option value="">Seleccioná tu modelo</option>
-                        <option>Cronos</option><option>Strada</option><option>Toro</option><option>Pulse</option><option>Fastback</option>
+                        <option value="">¿En qué modelo estás interesado?</option>
+                        <option>Cronos</option><option>Mobi</option><option>Argo</option>
+                        <option>Pulse</option><option>Fastback</option><option>Strada</option>
+                        <option>Toro</option><option>Titano</option><option>Fiorino</option>
                     </select>
                 </div>
-                <button type="submit" class="btn-submit">ENVIAR CONSULTA</button>
+                <button type="submit" class="btn-submit">QUIERO MI ASESORAMIENTO</button>
             </form>
         </div>
     </section>
@@ -191,7 +210,8 @@
     </a>
 
     <footer>
-        <p>CONCESIONARIO OFICIAL FIAT &copy; 2026</p>
+        <p><strong>CONCESIONARIO OFICIAL FIAT &copy; 2026</strong></p>
+        <p style="margin-top:10px; color:#333;">Imágenes de referencia. Sujeto a términos y condiciones de Stellantis Argentina.</p>
     </footer>
 
 </body>
