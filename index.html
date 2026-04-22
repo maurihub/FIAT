@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fiat Plan Argentina | Entrega Pactada 2026</title>
+    <!-- Fuentes e Iconos -->
+    <link href="https://googleapis.com" rel="stylesheet">
+    <link rel="stylesheet" href="https://cloudflare.com">
+    <style>
+        :root {
+            --fiat-red: #B11016;
+            --fiat-black: #121212;
+            --fiat-grey: #f4f4f4;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Montserrat', sans-serif; }
+        body { background-color: var(--fiat-grey); color: #333; line-height: 1.6; overflow-x: hidden; }
+
+        /* Navegación Superior */
+        nav {
+            background: #fff;
+            padding: 15px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 4px solid var(--fiat-red);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .logo-fiat { height: 40px; }
+        .pactada-badge { background: var(--fiat-red); color: #fff; padding: 5px 15px; border-radius: 50px; font-weight: 900; font-size: 0.8rem; }
+
+        /* Hero Principal */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+                        url('https://fiat.com.ar');
+            background-size: cover;
+            background-position: center;
+            height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            text-align: center;
+            padding: 0 20px;
+        }
+        .hero h1 { font-size: 3rem; font-weight: 900; text-transform: uppercase; margin-bottom: 10px; }
+        .hero p { font-size: 1.2rem; background: var(--fiat-red); padding: 5px 20px; border-radius: 5px; }
+
+        /* Contenedor de Modelos */
+        .container { max-width: 1200px; margin: 0 auto; padding: 50px 20px; }
+        .section-title { text-align: center; margin-bottom: 40px; font-weight: 900; font-size: 2rem; }
+
+        .grid-modelos {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+        .card {
+            background: #fff;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            text-align: center;
+            transition: 0.3s;
+            border: 1px solid #eee;
+        }
+        .card:hover { transform: translateY(-5px); border-color: var(--fiat-red); }
+        .card img { width: 100%; height: 180px; object-fit: contain; padding: 20px; }
+        .card-body { padding: 20px; }
+        .card-body h3 { font-size: 1.5rem; margin-bottom: 15px; }
+
+        /* Botón WhatsApp */
+        .btn-ws {
+            display: inline-block;
+            background: #25d366;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 700;
+            transition: 0.3s;
+        }
+        .btn-ws:hover { background: #128c7e; }
+
+        /* Sección Final y WhatsApp Flotante */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #25d366;
+            color: #fff;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 30px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            z-index: 2000;
+        }
+
+        footer { background: #000; color: #777; text-align: center; padding: 30px; font-size: 0.8rem; margin-top: 40px; }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <img src="https://fiat.com.ar" alt="Fiat" class="logo-fiat">
+        <div class="pactada-badge">ENTREGA PACTADA 2026</div>
+    </nav>
+
+    <section class="hero">
+        <h1>TU FIAT 0KM</h1>
+        <p>ASESORAMIENTO OFICIAL</p>
+    </section>
+
+    <div class="container">
+        <h2 class="section-title">ELEGÍ TU MODELO</h2>
+        <div class="grid-modelos">
+            <!-- Cronos -->
+            <div class="card">
+                <img src="https://fiat.com.ar" alt="Cronos">
+                <div class="card-body">
+                    <h3>Cronos</h3>
+                    <a href="https://wa.me" class="btn-ws">
+                        <i class="fab fa-whatsapp"></i> CONSULTAR
+                    </a>
+                </div>
+            </div>
+            <!-- Strada -->
+            <div class="card">
+                <img src="https://fiat.com.ar" alt="Strada">
+                <div class="card-body">
+                    <h3>Strada</h3>
+                    <a href="https://wa.me" class="btn-ws">
+                        <i class="fab fa-whatsapp"></i> CONSULTAR
+                    </a>
+                </div>
+            </div>
+            <!-- Toro -->
+            <div class="card">
+                <img src="https://fiat.com.ar" alt="Toro">
+                <div class="card-body">
+                    <h3>Toro</h3>
+                    <a href="https://wa.me" class="btn-ws">
+                        <i class="fab fa-whatsapp"></i> CONSULTAR
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <a href="https://wa.me" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <footer>
+        <p>&copy; 2026 Concesionario Oficial Fiat Argentina</p>
+    </footer>
+
+</body>
+</html>
