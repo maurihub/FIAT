@@ -3,115 +3,89 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fiat Plan Argentina | Sitio Oficial 2026</title>
+    <title>Fiat Plan Argentina | Sitio Oficial</title>
     <style>
-        :root { --fiat-red: #cc0000; --fiat-grey: #333; --light-bg: #f4f4f4; }
-        body { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; margin: 0; padding: 0; background-color: var(--light-bg); color: var(--fiat-grey); }
-        header { background-color: #fff; padding: 15px 0; text-align: center; border-bottom: 5px solid var(--fiat-red); position: sticky; top: 0; z-index: 1000; }
-        .logo { font-size: 2em; font-weight: 800; color: var(--fiat-red); text-transform: uppercase; letter-spacing: 2px; }
+        :root { --fiat-red: #cc0000; --dark-grey: #222; }
+        body { font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; background-color: #f8f9fa; color: #333; }
         
-        /* Cuestionario Estilo */
-        .quiz-section { background: #fff; padding: 40px 20px; border-radius: 15px; margin: 20px auto; max-width: 800px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        /* Header y Logo */
+        header { background: #fff; padding: 15px; text-align: center; border-bottom: 4px solid var(--fiat-red); position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        .logo-text { font-size: 1.8rem; font-weight: bold; color: var(--fiat-red); text-transform: uppercase; letter-spacing: 1px; }
+
+        /* Banner Principal */
+        .hero { background: #111; color: white; padding: 40px 20px; text-align: center; }
+        .hero h1 { margin: 0; font-size: 2rem; }
+        .hero p { opacity: 0.9; margin-top: 10px; }
+
+        /* CUESTIONARIO INTERACTIVO */
+        .quiz-container { max-width: 600px; margin: -30px auto 40px; background: white; padding: 25px; border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.15); position: relative; z-index: 10; border-top: 5px solid var(--fiat-red); }
         .quiz-step { display: none; }
-        .quiz-step.active { display: block; }
-        .quiz-options { display: flex; flex-direction: column; gap: 10px; margin-top: 20px; }
-        .quiz-btn { background: #fff; border: 2px solid var(--fiat-red); padding: 15px; border-radius: 8px; cursor: pointer; font-weight: bold; transition: 0.3s; }
-        .quiz-btn:hover { background: var(--fiat-red); color: #fff; }
+        .quiz-step.active { display: block; animation: fadeIn 0.5s; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
         
-        /* Grid de Modelos */
-        .container { max-width: 1200px; margin: 40px auto; padding: 0 20px; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
-        .card { background: #fff; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
-        .card img { width: 100%; height: 200px; object-fit: cover; }
-        .card-body { padding: 20px; text-align: center; }
-        
+        .quiz-btn { display: block; width: 100%; padding: 15px; margin: 10px 0; border: 1px solid #ddd; border-radius: 8px; background: #fff; cursor: pointer; font-size: 1rem; transition: 0.2s; text-align: left; }
+        .quiz-btn:hover { background: #fff5f5; border-color: var(--fiat-red); }
+
+        /* Catálogo de Autos */
+        .container { max-width: 1100px; margin: auto; padding: 20px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+        .card { background: white; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.05); border: 1px solid #eee; }
+        .card img { width: 100%; height: 200px; object-fit: cover; background: #eee; }
+        .card-content { padding: 20px; text-align: center; }
+        .card-title { font-size: 1.4rem; font-weight: bold; margin-bottom: 10px; color: var(--fiat-red); }
+        .btn-ws { display: inline-block; background: #25d366; color: white; padding: 12px 25px; text-decoration: none; border-radius: 5px; font-weight: bold; margin-top: 10px; }
+
         /* Botón WhatsApp Flotante */
-        .whatsapp-float { position: fixed; bottom: 20px; right: 20px; background: #25d366; color: white; width: 60px; height: 60px; border-radius: 50px; text-align: center; font-size: 30px; box-shadow: 2px 2px 3px #999; z-index: 1001; display: flex; align-items: center; justify-content: center; text-decoration: none; }
-        
-        .btn-red { background-color: var(--fiat-red); color: #fff; padding: 12px 25px; text-decoration: none; border-radius: 5px; font-weight: bold; display: inline-block; }
-        footer { background-color: var(--fiat-grey); color: #fff; text-align: center; padding: 30px 0; margin-top: 50px; }
+        .ws-float { position: fixed; bottom: 20px; right: 20px; background: #25d366; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 10px rgba(0,0,0,0.3); z-index: 1000; text-decoration: none; font-size: 30px; }
     </style>
 </head>
 <body>
 
-    <header>
-        <div class="logo">Fiat Plan Argentina</div>
-        <p style="margin:0; font-weight:bold; color:#666;">CONCESIONARIO OFICIAL</p>
-    </header>
+<header>
+    <div class="logo-text">FIAT ARGENTINA</div>
+    <small>ASESOR OFICIAL: 11 7368-6936</small>
+</header>
 
-    <div class="container">
-        <section class="quiz-section">
-            <h2 style="text-align: center; color: var(--fiat-red);">¿Cuál es tu Fiat ideal?</h2>
-            
-            <div id="step1" class="quiz-step active">
-                <p>1. ¿Para qué vas a usar principalmente el vehículo?</p>
-                <div class="quiz-options">
-                    <button class="quiz-btn" onclick="nextStep(2, 'trabajo')">Trabajo y carga</button>
-                    <button class="quiz-btn" onclick="nextStep(2, 'familia')">Uso familiar / Viajes</button>
-                    <button class="quiz-btn" onclick="nextStep(2, 'ciudad')">Uso diario en ciudad</button>
-                </div>
-            </div>
+<section class="hero">
+    <h1>¿Buscás tu próximo 0km?</h1>
+    <p>Financiación directa de fábrica para autos y camionetas.</p>
+</section>
 
-            <div id="step2" class="quiz-step">
-                <p>2. ¿Qué característica es más importante para vos?</p>
-                <div class="quiz-options">
-                    <button class="quiz-btn" onclick="showResult('ahorro')">Economía y bajo consumo</button>
-                    <button class="quiz-btn" onclick="showResult('espacio')">Espacio y despeje del suelo</button>
-                    <button class="quiz-btn" onclick="showResult('tecnologia')">Tecnología y diseño</button>
-                </div>
-            </div>
-
-            <div id="result" class="quiz-step">
-                <h3 id="result-text">Analizando...</h3>
-                <p>Tengo una oferta especial para este modelo para vos.</p>
-                <a id="whatsapp-link" href="#" class="btn-red" target="_blank">Consultar disponibilidad por WhatsApp</a>
-            </div>
-        </section>
-
-        <h2 style="text-align: center; margin: 40px 0;">Nuestra Gama</h2>
-        <div class="grid">
-            <div class="card">
-                <img src="img/cronos.jpg" alt="Fiat Cronos">
-                <div class="card-body"><h3>CRONOS</h3><a href="https://wa.me/5491173686936?text=Hola!%20Me%20interesa%20el%20Cronos" class="btn-red">INFO AQUÍ</a></div>
-            </div>
-            <div class="card">
-                <img src="img/pulse.jpg" alt="Fiat Pulse">
-                <div class="card-body"><h3>PULSE</h3><a href="https://wa.me/5491173686936?text=Hola!%20Me%20interesa%20el%20Pulse" class="btn-red">INFO AQUÍ</a></div>
-            </div>
-            <div class="card">
-                <img src="img/titano.jpg" alt="Fiat Titano">
-                <div class="card-body"><h3>TITANO</h3><a href="https://wa.me/5491173686936?text=Hola!%20Me%20interesa%20la%20Titano" class="btn-red">INFO AQUÍ</a></div>
-            </div>
-        </div>
+<div class="quiz-container">
+    <div id="step1" class="quiz-step active">
+        <h3 style="margin-top:0">1. ¿Qué tipo de vehículo buscás?</h3>
+        <button class="quiz-btn" onclick="nextStep(2, 'Auto')">🚗 Un auto (Cronos, Mobi, Argo)</button>
+        <button class="quiz-btn" onclick="nextStep(2, 'SUV')">🏙️ Un SUV (Pulse, Fastback)</button>
+        <button class="quiz-btn" onclick="nextStep(2, 'Camioneta')">🚚 Una camioneta (Fiorino, Strada, Toro, Titano)</button>
     </div>
 
-    <a href="https://wa.me/5491173686936" class="whatsapp-float" target="_blank">
-        <svg style="width:35px;height:35px" viewBox="0 0 24 24"><path fill="currentColor" d="M12.04 2C6.5 2 2 6.5 2 12.04C2 13.81 2.46 15.5 3.33 17L2.05 21.75L6.96 20.46C8.38 21.44 10.12 22 12.04 22C17.5 22 22 17.5 22 12.04C22 6.5 17.5 2 12.04 2M12.04 20.11C10.43 20.11 8.88 19.66 7.55 18.82L7.24 18.62L4.35 19.37L5.12 16.57L4.9 16.22C3.96 14.73 3.47 13 3.47 11.23C3.47 6.5 7.31 2.66 12.04 2.66C16.77 2.66 20.61 6.5 20.61 11.23C20.61 15.96 16.77 19.8 12.04 19.8V20.11Z"/></svg>
-    </a>
+    <div id="step2" class="quiz-step">
+        <h3>2. ¿Cuál es tu prioridad?</h3>
+        <button class="quiz-btn" onclick="finalStep('Cuota más baja')">📉 Cuota más baja</button>
+        <button class="quiz-btn" onclick="finalStep('Entrega rápida')">⚡ Entrega rápida</button>
+        <button class="quiz-btn" onclick="finalStep('Equipamiento Full')">💎 Equipamiento Full</button>
+    </div>
 
-    <footer>
-        <p>CONCESIONARIO OFICIAL FIAT © 2026 - TODOS LOS DERECHOS RESERVADOS</p>
-    </footer>
+    <div id="stepFinal" class="quiz-step" style="text-align: center;">
+        <h3 style="color: var(--fiat-red)">¡Excelente elección!</h3>
+        <p id="result-msg"></p>
+        <a id="quiz-ws-link" href="#" class="btn-ws">RECIBIR INFO POR WHATSAPP</a>
+    </div>
+</div>
 
-    <script>
-        let userChoice = "";
-        function nextStep(step, choice) {
-            document.querySelectorAll('.quiz-step').forEach(s => s.classList.remove('active'));
-            document.getElementById('step' + step).classList.add('active');
-            if(choice) userChoice = choice;
-        }
+<div class="container">
+    <h2 style="text-align:center; margin-bottom:30px">Gama Completa Fiat 2026</h2>
+    <div class="grid">
+        <div class="card">
+            <img src="img/cronos.jpg" alt="Fiat Cronos">
+            <div class="card-content">
+                <div class="card-title">CRONOS</div>
+                <p>El sedán más vendido del país. Ideal para familia o trabajo.</p>
+                <a href="https://wa.me/5491173686936?text=Hola! Quiero info del Cronos" class="btn-ws">Consultar</a>
+            </div>
+        </div>
 
-        function showResult(pref) {
-            document.querySelectorAll('.quiz-step').forEach(s => s.classList.remove('active'));
-            document.getElementById('result').classList.add('active');
-            
-            let model = "Cronos";
-            if(userChoice === 'trabajo') model = "Fiorino o Titano";
-            if(userChoice === 'familia' || pref === 'espacio') model = "Pulse o Fastback";
-            
-            document.getElementById('result-text').innerText = "Tu Fiat ideal es: " + model;
-            document.getElementById('whatsapp-link').href = "https://wa.me/5491173686936?text=Hola!%20El%20test%20me%20recomendo%20el%20" + model + ".%20Quiero%20mas%20info.";
-        }
-    </script>
-</body>
-</html>
+        <div class="card">
+            <img src="img/pulse.jpg" alt="Fiat Pulse">
+            <div class="card-content">
+                <div class="card-title">
