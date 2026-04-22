@@ -3,39 +3,122 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fiat Plan Argentina | Galería</title>
+    <title>Fiat Plan Argentina | Sitio Oficial 2026</title>
     <style>
-        body { font-family: Arial, sans-serif; text-align: center; background-color: #f4f4f4; }
-        .container { width: 80%; margin: auto; padding: 20px; }
-        .galeria { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; }
-        .card { background: white; padding: 10px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
-        img { max-width: 300px; height: auto; border-radius: 4px; display: block; }
-        h1 { color: #cc0000; }
+        :root { --fiat-red: #cc0000; --fiat-grey: #333; --light-bg: #f4f4f4; }
+        body { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; margin: 0; padding: 0; background-color: var(--light-bg); color: var(--fiat-grey); }
+        header { background-color: #fff; padding: 15px 0; text-align: center; border-bottom: 5px solid var(--fiat-red); position: sticky; top: 0; z-index: 1000; }
+        .logo { font-size: 2em; font-weight: 800; color: var(--fiat-red); text-transform: uppercase; letter-spacing: 2px; }
+        .hero { background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('img/hero-fiat.jpg') center/cover no-repeat; height: 350px; color: #fff; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
+        .hero h1 { font-size: 3em; margin: 0; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); }
+        .container { max-width: 1200px; margin: 40px auto; padding: 0 20px; }
+        .section-title { text-align: center; border-bottom: 2px solid var(--fiat-red); display: inline-block; padding-bottom: 10px; margin-bottom: 30px; width: 100%; font-size: 1.8em; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
+        .card { background: #fff; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.1); transition: 0.3s; }
+        .card:hover { transform: translateY(-10px); }
+        .card img { width: 100%; height: 200px; object-fit: cover; }
+        .card-body { padding: 20px; text-align: center; }
+        .card-title { font-size: 1.5em; font-weight: bold; margin-bottom: 10px; color: var(--fiat-red); }
+        .card-text { font-size: 0.9em; margin-bottom: 20px; color: #666; }
+        .btn { background-color: var(--fiat-red); color: #fff; padding: 12px 25px; text-decoration: none; border-radius: 5px; font-weight: bold; display: inline-block; transition: 0.3s; }
+        .btn:hover { background-color: #990000; }
+        .info-bar { background-color: #fff; padding: 20px 0; margin-top: 40px; display: flex; justify-content: space-around; flex-wrap: wrap; text-align: center; }
+        .info-item { padding: 10px; }
+        .info-item h3 { margin: 5px 0; color: var(--fiat-red); }
+        footer { background-color: var(--fiat-grey); color: #fff; text-align: center; padding: 30px 0; margin-top: 50px; }
     </style>
 </head>
 <body>
 
+    <header>
+        <div class="logo">Fiat Plan Argentina</div>
+        <p style="margin:0; font-weight:bold; color:#666;">CONCESIONARIO OFICIAL</p>
+    </header>
+
+    <section class="hero">
+        <h1>GAMA FIAT 2026</h1>
+        <p style="font-size: 1.2em;">Tu 0KM más cerca que nunca con financiación directa.</p>
+    </section>
+
     <div class="container">
-        <h1>Gama Fiat 2026</h1>
-        <p>Si las imágenes no se cargan, verifica que la carpeta se llame <strong>img</strong> y los archivos estén en minúsculas.</p>
+        <h2 class="section-title">Elegí tu próximo modelo</h2>
         
-        <div class="galeria">
+        <div class="grid">
             <div class="card">
-                <img src="img/fiat-cronos.jpg" alt="Fiat Cronos">
-                <p>Fiat Cronos</p>
+                <img src="img/cronos.jpg" alt="Fiat Cronos">
+                <div class="card-body">
+                    <div class="card-title">CRONOS</div>
+                    <p class="card-text">El auto más vendido del país. Financiación 70/30 y 90/10.</p>
+                    <a href="https://wa.me/TU_NUMERO" class="btn">ME INTERESA</a>
+                </div>
             </div>
 
             <div class="card">
-                <img src="img/fiat-pulse.jpg" alt="Fiat Pulse">
-                <p>Fiat Pulse</p>
+                <img src="img/pulse.jpg" alt="Fiat Pulse">
+                <div class="card-body">
+                    <div class="card-title">PULSE</div>
+                    <p class="card-text">Diseño SUV moderno y tecnológico para la ciudad.</p>
+                    <a href="https://wa.me/TU_NUMERO" class="btn">ME INTERESA</a>
+                </div>
             </div>
 
             <div class="card">
-                <img src="img/fiat-fiorino.jpg" alt="Fiat Fiorino">
-                <p>Fiat Fiorino</p>
+                <img src="img/titano.jpg" alt="Fiat Titano">
+                <div class="card-body">
+                    <div class="card-title">TITANO</div>
+                    <p class="card-text">Potencia 4x4. La nueva pick-up que estabas esperando.</p>
+                    <a href="https://wa.me/TU_NUMERO" class="btn">ME INTERESA</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="img/fiorino.jpg" alt="Fiat Fiorino">
+                <div class="card-body">
+                    <div class="card-title">FIORINO</div>
+                    <p class="card-text">Tu herramienta de trabajo incansable. Entrega pactada.</p>
+                    <a href="https://wa.me/TU_NUMERO" class="btn">ME INTERESA</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="img/toro.jpg" alt="Fiat Toro">
+                <div class="card-body">
+                    <div class="card-title">TORO</div>
+                    <p class="card-text">Versatilidad y confort en una pick-up urbana.</p>
+                    <a href="https://wa.me/TU_NUMERO" class="btn">ME INTERESA</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="img/fastback.jpg" alt="Fiat Fastback">
+                <div class="card-body">
+                    <div class="card-title">FASTBACK</div>
+                    <p class="card-text">El primer SUV Coupe de Fiat con alma deportiva.</p>
+                    <a href="https://wa.me/TU_NUMERO" class="btn">ME INTERESA</a>
+                </div>
             </div>
         </div>
     </div>
+
+    <div class="info-bar">
+        <div class="info-item">
+            <h3>CUOTA FIJA</h3>
+            <p>Tranquilidad mes a mes.</p>
+        </div>
+        <div class="info-item">
+            <h3>LLAVE X LLAVE</h3>
+            <p>Tomamos tu usado al mejor precio.</p>
+        </div>
+        <div class="info-item">
+            <h3>ENTREGA PACTADA</h3>
+            <p>Retirá tu unidad en cuota 3, 6 o 9.</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>CONCESIONARIO OFICIAL FIAT © 2026 - TODOS LOS DERECHOS RESERVADOS</p>
+        <p style="font-size: 0.8em; opacity: 0.7;">Las imágenes son ilustrativas. Sujeto a aprobación crediticia.</p>
+    </footer>
 
 </body>
 </html>
