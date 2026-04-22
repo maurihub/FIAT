@@ -7,25 +7,17 @@
     <link href="https://googleapis.com" rel="stylesheet">
     <link rel="stylesheet" href="https://cloudflare.com">
     <style>
-        :root {
-            --fiat-red: #B11016;
-            --fiat-dark: #121212;
-            --fiat-grey: #f0f0f0;
-        }
-
+        :root { --fiat-red: #B11016; --fiat-dark: #121212; --fiat-grey: #f0f0f0; }
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Montserrat', sans-serif; }
         
         body { 
             background-color: var(--fiat-grey);
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://w3.org' width='200' height='100' viewBox='0 0 200 100'%3E%3Ctext x='10' y='60' font-family='Arial' font-size='40' font-weight='bold' fill='%23000' fill-opacity='0.03'%3EFIAT%3C/text%3E%3C/svg%3E");
-            color: #333;
-            overflow-x: hidden;
-            scroll-behavior: smooth;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://w3.org' width='200' height='100' viewBox='0 0 200 100'%3E%3Ctext x='10' y='60' font-family='Arial' font-size='30' font-weight='bold' fill='%23000' fill-opacity='0.03'%3EFIAT%3C/text%3E%3C/svg%3E");
         }
 
         nav {
             background: #fff;
-            padding: 15px 8%;
+            padding: 15px 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -33,69 +25,48 @@
             position: sticky;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
         }
-        .logo-fiat { height: 45px; }
-
-        .btn-header {
-            background: var(--fiat-red);
-            color: white;
-            padding: 10px 20px;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: 700;
-            font-size: 0.8rem;
-        }
+        .logo-fiat { height: 40px; }
 
         .hero {
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.3)), 
-                        url('https://unsplash.com');
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.4)), url('https://unsplash.com');
             background-size: cover;
             background-position: center;
-            height: 50vh;
+            height: 45vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             color: white;
             text-align: center;
-            padding: 0 20px;
         }
-        .hero h1 { font-size: 3.5rem; font-weight: 900; }
 
-        .container { max-width: 1300px; margin: 0 auto; padding: 60px 20px; }
-        .title-section { text-align: center; margin-bottom: 50px; }
-        .title-section h2 { font-size: 2.5rem; font-weight: 900; text-transform: uppercase; }
-
-        .grid-modelos {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-        }
+        .container { max-width: 1200px; margin: 0 auto; padding: 40px 20px; }
+        .grid-modelos { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
 
         .card {
             background: #fff;
             border-radius: 15px;
             overflow: hidden;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
-            transition: 0.4s;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+            transition: 0.3s;
             text-align: center;
-            border: 1px solid #eee;
         }
-        .card:hover { transform: translateY(-10px); box-shadow: 0 15px 35px rgba(177, 16, 22, 0.2); }
+        .card:hover { transform: translateY(-10px); }
         
-        /* Ajuste de imágenes para asegurar visibilidad */
+        /* Imágenes forzadas a verse */
         .card img { 
             width: 100%; 
-            height: 200px; 
+            height: 220px; 
             object-fit: contain; 
             padding: 15px;
+            background: white;
             display: block;
-            margin: 0 auto;
         }
         
-        .card-content { padding: 20px; background: #fafafa; }
-        .card-content h3 { font-size: 1.5rem; margin-bottom: 15px; font-weight: 900; }
+        .card-body { padding: 20px; background: #fafafa; border-top: 1px solid #eee; }
+        .card-body h3 { font-size: 1.6rem; margin-bottom: 15px; font-weight: 900; color: var(--fiat-dark); }
 
         .btn-card {
             display: inline-block;
@@ -105,13 +76,15 @@
             text-decoration: none;
             border-radius: 5px;
             font-weight: 700;
+            transition: 0.3s;
         }
+        .btn-card:hover { background: var(--fiat-dark); }
 
         .contact-section { background: var(--fiat-dark); color: white; padding: 60px 5%; text-align: center; }
-        .form-group { margin-bottom: 15px; text-align: left; max-width: 500px; margin-left: auto; margin-right: auto; }
-        .form-group input, .form-group select { width: 100%; padding: 12px; border-radius: 5px; border: none; }
+        .form-group { margin-bottom: 15px; max-width: 450px; margin-left: auto; margin-right: auto; }
+        .form-group input, .form-group select { width: 100%; padding: 14px; border-radius: 5px; border: none; font-size: 1rem; }
         
-        .btn-submit { background: var(--fiat-red); color: white; border: none; padding: 15px 30px; font-weight: 900; cursor: pointer; width: 100%; max-width: 500px; border-radius: 5px; }
+        .btn-submit { background: var(--fiat-red); color: white; border: none; padding: 16px; font-weight: 900; cursor: pointer; width: 100%; max-width: 450px; border-radius: 5px; text-transform: uppercase; }
 
         .ws-float {
             position: fixed;
@@ -119,14 +92,14 @@
             right: 25px;
             background: #25d366;
             color: white;
-            width: 60px;
-            height: 60px;
+            width: 65px;
+            height: 65px;
             border-radius: 50%;
             display: flex;
             justify-content: center;
             align-items: center;
-            font-size: 30px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            font-size: 35px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
             z-index: 1000;
         }
 
@@ -136,52 +109,53 @@
 <body>
 
     <nav>
-        <img src="https://wikimedia.org" alt="Fiat" class="logo-fiat">
-        <a href="#contacto" class="btn-header">CONTACTO</a>
+        <img src="https://wikimedia.org" alt="Fiat Logo" class="logo-fiat">
+        <div style="font-weight: 900; color: var(--fiat-red); font-size: 0.8rem;">ENTREGA PACTADA 2026</div>
     </nav>
 
     <header class="hero">
-        <h1>GAMA FIAT 2026</h1>
-        <p>ENTREGA PACTADA</p>
+        <h1 style="font-size: 3rem; font-weight: 900;">TU FIAT 0KM</h1>
+        <p style="letter-spacing: 3px;">DIRECTO DE FÁBRICA</p>
     </header>
 
     <div class="container">
-        <div class="title-section">
-            <h2>NUESTROS MODELOS</h2>
-        </div>
-
         <div class="grid-modelos">
+            <!-- Cronos -->
             <div class="card">
-                <img src="https://fiat.com.ar" alt="Cronos">
-                <div class="card-content">
+                <img src="https://imgur.com" alt="Fiat Cronos">
+                <div class="card-body">
                     <h3>CRONOS</h3>
                     <a href="https://wa.me" class="btn-card">INFO WHATSAPP</a>
                 </div>
             </div>
+            <!-- Strada -->
             <div class="card">
-                <img src="https://fiat.com.ar" alt="Strada">
-                <div class="card-body card-content">
+                <img src="https://imgur.com" alt="Fiat Strada">
+                <div class="card-body">
                     <h3>STRADA</h3>
                     <a href="https://wa.me" class="btn-card">INFO WHATSAPP</a>
                 </div>
             </div>
+            <!-- Toro -->
             <div class="card">
-                <img src="https://fiat.com.ar" alt="Toro">
-                <div class="card-content">
+                <img src="https://imgur.com" alt="Fiat Toro">
+                <div class="card-body">
                     <h3>TORO</h3>
                     <a href="https://wa.me" class="btn-card">INFO WHATSAPP</a>
                 </div>
             </div>
+            <!-- Pulse -->
             <div class="card">
-                <img src="https://fiat.com.ar" alt="Pulse">
-                <div class="card-content">
+                <img src="https://imgur.com" alt="Fiat Pulse">
+                <div class="card-body">
                     <h3>PULSE</h3>
                     <a href="https://wa.me" class="btn-card">INFO WHATSAPP</a>
                 </div>
             </div>
+            <!-- Fastback -->
             <div class="card">
-                <img src="https://fiat.com.ar" alt="Fastback">
-                <div class="card-content">
+                <img src="https://imgur.com" alt="Fiat Fastback">
+                <div class="card-body">
                     <h3>FASTBACK</h3>
                     <a href="https://wa.me" class="btn-card">INFO WHATSAPP</a>
                 </div>
@@ -190,24 +164,26 @@
     </div>
 
     <section class="contact-section" id="contacto">
-        <h2 style="margin-bottom: 20px;">ASESORAMIENTO OFICIAL</h2>
+        <h2 style="margin-bottom: 25px; font-weight: 900;">RECIBIR PRESUPUESTO</h2>
         <form>
+            <div class="form-group"><input type="text" placeholder="Nombre completo" required></div>
+            <div class="form-group"><input type="tel" placeholder="WhatsApp (Ej: 11 1234 5678)" required></div>
             <div class="form-group">
-                <input type="text" placeholder="Nombre" required>
+                <select>
+                    <option>Elegir Modelo...</option>
+                    <option>Cronos</option><option>Strada</option><option>Toro</option><option>Pulse</option><option>Fastback</option>
+                </select>
             </div>
-            <div class="form-group">
-                <input type="tel" placeholder="WhatsApp" required>
-            </div>
-            <button type="submit" class="btn-submit">ENVIAR CONSULTA</button>
+            <button type="submit" class="btn-submit">QUIERO MI ASESORAMIENTO</button>
         </form>
     </section>
 
-    <a href="https://wa.me" class="ws-float">
+    <a href="https://wa.me" class="ws-float" target="_blank">
         <i class="fab fa-whatsapp"></i>
     </a>
 
     <footer>
-        <p>CONCESIONARIO OFICIAL FIAT &copy; 2026</p>
+        <p><strong>CONCESIONARIO OFICIAL FIAT ARGENTINA &copy; 2026</strong></p>
     </footer>
 
 </body>
