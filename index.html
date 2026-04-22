@@ -13,13 +13,13 @@
         header img { height: 40px; }
         header span { font-weight: bold; font-size: 1.4rem; margin-left: 10px; color: var(--fiat-dark); letter-spacing: 1px; }
 
-        /* Hero */
+        /* Hero - FONDO FIAT CRONOS */
         .hero { 
-            background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('img/hero-fiat.jpg') center/cover no-repeat;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('img/hero-cronos.jpg') center/cover no-repeat;
             height: 400px; color: white; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 20px;
         }
         .hero h1 { font-size: 2.8rem; margin: 0; text-transform: uppercase; border-bottom: 3px solid var(--fiat-red); padding-bottom: 10px; }
-        .hero p { font-size: 1.2rem; margin-top: 15px; max-width: 700px; }
+        .hero p { font-size: 1.2rem; margin-top: 15px; max-width: 700px; text-shadow: 1px 1px 2px rgba(0,0,0,0.5); }
 
         /* Grid de Modelos */
         .container { max-width: 1200px; margin: 50px auto; padding: 0 20px; }
@@ -143,4 +143,40 @@
         <div id="q1" class="quiz-step active">
             <p><strong>1. Elegí el segmento que buscás:</strong></p>
             <button class="quiz-option" onclick="go(2, 'Auto/SUV')">Autos y SUVs (Mobi, Cronos, Pulse...)</button>
-            <button class="quiz-option" onclick="go(2, 'Trabajo/C
+            <button class="quiz-option" onclick="go(2, 'Trabajo/Carga')">Pick-ups y Utilitarios (Strada, Toro, Titano, Fiorino)</button>
+        </div>
+        <div id="q2" class="quiz-step">
+            <p><strong>2. ¿Tenés un capital para entrega o buscás cuotas?</strong></p>
+            <button class="quiz-option" onclick="done('Entrega con usado/efectivo')">Tengo usado o efectivo para retirar pronto</button>
+            <button class="quiz-option" onclick="done('Solo cuotas')">Busco la cuota más accesible (100% financiado)</button>
+        </div>
+        <div id="qFinal" class="quiz-step" style="text-align:center">
+            <h3 style="color: green;">¡Perfecto!</h3>
+            <p>Hacé clic abajo para recibir tu presupuesto oficial por WhatsApp.</p>
+            <a id="res-ws" href="#" class="btn-ws">OBTENER ASESORAMIENTO</a>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <p><strong>FIAT ARGENTINA - ASESOR OFICIAL</strong></p>
+    <p>Ventas Directas | Plan de Ahorro | Gestión 2026</p>
+</footer>
+
+<a href="https://wa.me/5491176386936" class="ws-float">W</a>
+
+<script>
+    let seleccionSegmento = "";
+    function go(step, valor) {
+        seleccionSegmento = valor;
+        document.getElementById('q1').classList.remove('active');
+        document.getElementById('q2').classList.add('active');
+    }
+    function done(prioridad) {
+        document.getElementById('q2').classList.remove('active');
+        document.getElementById('qFinal').classList.add('active');
+        document.getElementById('res-ws').href = "https://wa.me/5491176386936?text=Hola! Hice el test web. Me interesa: " + seleccionSegmento + " - Modalidad: " + prioridad;
+    }
+</script>
+</body>
+</html>
