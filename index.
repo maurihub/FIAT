@@ -18,7 +18,7 @@
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Montserrat', sans-serif; }
         body { background-color: var(--fiat-grey); color: var(--fiat-dark-grey); scroll-behavior: smooth; }
 
-        /* NavegaciÛn */
+        /* Navegaci√≥n */
         nav {
             background: white;
             padding: 15px 5%;
@@ -133,7 +133,7 @@
 
     <header class="hero">
         <h1>Tu Fiat 0km</h1>
-        <p>Retir· con o sin anticipo | Cuotas Pesos</p>
+        <p>Retir√° con o sin anticipo | Cuotas Pesos</p>
         <a href="#modelos" class="btn">VER MODELOS</a>
     </header>
 
@@ -145,7 +145,7 @@
                 <img src="https://fiat.com.ar" alt="Fiat Cronos">
                 <div class="card-body">
                     <h3>Cronos</h3>
-                    <p>AdjudicaciÛn Asegurada</p><br>
+                    <p>Adjudicaci√≥n Asegurada</p><br>
                     <a href="https://wa.me" class="btn btn-ws"><i class="fab fa-whatsapp"></i> CONSULTAR</a>
                 </div>
             </div>
@@ -163,7 +163,7 @@
                 <img src="https://fiat.com.ar" alt="Fiat Toro">
                 <div class="card-body">
                     <h3>Toro</h3>
-                    <p>Potencia y TecnologÌa</p><br>
+                    <p>Potencia y Tecnolog√≠a</p><br>
                     <a href="https://wa.me" class="btn btn-ws"><i class="fab fa-whatsapp"></i> CONSULTAR</a>
                 </div>
             </div>
@@ -175,11 +175,11 @@
                 <div class="benefit-item"><i class="fas fa-hand-holding-usd"></i> Gastos de retiro financiados.</div>
                 <div class="benefit-item"><i class="fas fa-sync-alt"></i> Plan Llave x Llave (Tomamos tu usado).</div>
                 <div class="benefit-item"><i class="fas fa-calendar-alt"></i> Entrega Pactada por Contrato.</div>
-                <div class="benefit-item"><i class="fas fa-check-double"></i> SuscripciÛn solo con DNI.</div>
+                <div class="benefit-item"><i class="fas fa-check-double"></i> Suscripci√≥n solo con DNI.</div>
             </div>
 
             <div class="form-box">
-                <h3 style="margin-bottom: 20px; text-align: center;">°SOLICIT¡ TU CARPETA!</h3>
+                <h3 style="margin-bottom: 20px; text-align: center;">¬°SOLICIT√Å TU CARPETA!</h3>
                 <form>
                     <div class="form-group">
                         <label>Nombre y Apellido</label>
@@ -202,7 +202,7 @@
 
     <footer>
         <p>Concesionario Oficial Fiat Argentina &copy; 2026</p>
-        <p>Las promociones y entregas est·n sujetas a tÈrminos de suscripciÛn de Stellantis.</p>
+        <p>Las promociones y entregas est√°n sujetas a t√©rminos de suscripci√≥n de Stellantis.</p>
     </footer>
 
 </body>
