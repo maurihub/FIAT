@@ -152,3 +152,36 @@
         </div>
         <div id="q2" class="quiz-step">
             <p>2. ¿Tenés un usado para entregar?</p>
+            <button class="quiz-opt" onclick="done('Sí')">Sí, quiero entregar mi auto</button>
+            <button class="quiz-opt" onclick="done('No')">No, quiero financiar el 100%</button>
+        </div>
+        <div id="qFinal" class="quiz-step">
+            <h3>¡Excelente elección!</h3>
+            <p>Tengo una oferta especial de cuota fija para vos.</p>
+            <a id="btn-final" href="#" class="btn-consultar">HABLAR CON ASESOR AHORA</a>
+        </div>
+    </div>
+</section>
+
+<footer style="background: #000; color: #fff; text-align: center; padding: 30px;">
+    <p>ASESORAMIENTO OFICIAL FIAT ARGENTINA © 2026</p>
+</footer>
+
+<a href="https://wa.me/5491178914211" class="ws-float" target="_blank">W</a>
+
+<script>
+    let r1 = "";
+    function next(s, v) {
+        r1 = v;
+        document.getElementById('q1').classList.remove('active');
+        document.getElementById('q2').classList.add('active');
+    }
+    function done(r2) {
+        document.getElementById('q2').classList.remove('active');
+        document.getElementById('qFinal').classList.add('active');
+        document.getElementById('btn-final').href = "https://wa.me/5491178914211?text=Hola! Hice el cuestionario web. Busco uso " + r1 + ". Entrego usado: " + r2;
+    }
+</script>
+
+</body>
+</html>
