@@ -1,139 +1,187 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fiat Oficial Argentina | Modelos 0km 2026</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fiat Oficial Argentina | Modelos 0km 2026</title>
+<style>
+:root { --fiat-red: #cc0000; --dark-blue: #0e1d2f; --light-bg: #f0f2f5; }
+body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; background-color: var(--light-bg); }
+
+header { background: #fff; padding: 15px 20px; border-bottom: 3px solid var(--fiat-red); display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; }
+.logo-box { display: flex; align-items: center; font-weight: bold; font-size: 1.2rem; color: var(--dark-blue); }
+.logo-box img { height: 40px; margin-right: 10px; }
+
+.hero-cronos { 
+background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('img/hero-cronos.jpg') center/cover no-repeat;
+height: 450px; color: white; display: flex; flex-direction: column; justify-content: center; padding: 0 10%;
+}
+.hero-cronos h1 { font-size: 3rem; margin: 0; text-transform: uppercase; font-weight: 900; }
+.hero-cronos p { font-size: 1.3rem; background: var(--fiat-red); display: inline-block; padding: 5px 15px; margin-top: 10px; }
+
+.main-container { max-width: 1200px; margin: 40px auto; padding: 0 20px; }
+.grid-autos { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
+
+.auto-card { background: #fff; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.1); border: 1px solid #ddd; transition: 0.3s; display: flex; flex-direction: column; }
+.auto-card:hover { transform: translateY(-5px); box-shadow: 0 8px 20px rgba(0,0,0,0.15); }
+.auto-card img { width: 100%; height: 200px; object-fit: cover; }
+
+.auto-info { padding: 20px; flex-grow: 1; display: flex; flex-direction: column; }
+.auto-info h2 { margin: 0; font-size: 1.4rem; color: var(--dark-blue); }
+.auto-desc { font-size: 0.9rem; color: #666; margin: 10px 0; min-height: 45px; }
+.auto-badge { display: inline-block; padding: 4px 10px; background: #eef2f7; color: var(--fiat-red); font-weight: bold; font-size: 0.8rem; border-radius: 4px; margin-bottom: 15px; width: fit-content; }
+
+.btn-consultar { display: block; text-align: center; background: var(--fiat-red); color: #fff; padding: 12px; text-decoration: none; border-radius: 5px; font-weight: bold; transition: 0.3s; margin-top: auto; }
+.btn-consultar:hover { background: #aa0000; }
+
+.quiz-box { background: var(--dark-blue); color: white; padding: 50px 20px; margin-top: 50px; text-align: center; }
+.quiz-content { max-width: 600px; margin: auto; }
+.quiz-step { display: none; }
+.quiz-step.active { display: block; }
+.quiz-opt { display: block; width: 100%; background: #fff; color: #333; border: none; padding: 15px; margin: 10px 0; border-radius: 5px; cursor: pointer; font-weight: bold; }
+
+.ws-float { position: fixed; bottom: 25px; right: 25px; background: #25d366; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 10px rgba(0,0,0,0.3); z-index: 1000; text-decoration: none; font-size: 30px; }
+</style>
 </head>
 <body>
 
-    <header>
-        <div class="header-container">
-            <img src="img/logo-fiat.png" alt="Fiat" class="logo">
-            <div class="header-text">
-                <span class="oficial">OFICIAL ARGENTINA</span>
-                <span class="asesor">ASESOR: +54 9 11 7368-6936</span>
-            </div>
+<header>
+<div class="logo-box">
+<img src="img/logo-fiat.png" alt="Fiat">
+OFICIAL ARGENTINA
+</div>
+<div style="font-weight: bold; color: #555;">ASESOR: +54 9 11 7891-4211</div>
+</header>
+
+<section class="hero-cronos">
+<h1>FIAT CRONOS</h1>
+<p>EL AUTO MÁS VENDIDO DEL PAÍS</p>
+</section>
+
+<div class="main-container">
+<div class="grid-autos">
+<div class="auto-card">
+<img src="img/cronos.jpg" alt="Fiat Cronos">
+<div class="auto-info">
+<span class="auto-badge">FABRICADO EN CÓRDOBA</span>
+<h2>Cronos</h2>
+<p class="auto-desc">El sedán líder del mercado. Versatilidad, confort y el mejor valor de reventa.</p>
+<a href="https://wa.me/5491178914211?text=Hola! Me interesa el Cronos" class="btn-consultar">CONSULTAR PRECIO</a>
+</div>
+</div>
+
+<div class="auto-card">
+<img src="img/mobi.jpg" alt="Fiat Mobi">
+<div class="auto-info">
+<span class="auto-badge">TREKKING</span>
+<h2>Mobi Trekking</h2>
+<p class="auto-desc">La opción de entrada más económica. Ágil y de bajo consumo para la ciudad.</p>
+<a href="https://wa.me/5491178914211?text=Hola! Me interesa el Mobi" class="btn-consultar">CONSULTAR PRECIO</a>
+</div>
+</div>
+
+<div class="auto-card">
+<img src="img/fastback.jpg" alt="Fiat Fastback">
+<div class="auto-info">
+<span class="auto-badge">NUEVO SUV COUPÉ</span>
+<h2>Fastback</h2>
+<p class="auto-desc">El SUV con silueta crossover es una de las incorporaciones más recientes al catálogo.</p>
+<a href="https://wa.me/5491178914211?text=Hola! Me interesa el Fastback" class="btn-consultar">CONSULTAR PRECIO</a>
+</div>
+</div>
+
+<div class="auto-card">
+<img src="img/pulse.jpg" alt="Fiat Pulse">
+<div class="auto-info">
+<span class="auto-badge">SUV COMPACTO</span>
+<h2>Pulse</h2>
+<p class="auto-desc">Moderno, tecnológico y con gran despeje. El SUV ideal para tu familia.</p>
+<a href="https://wa.me/5491178914211?text=Hola! Me interesa el Pulse" class="btn-consultar">CONSULTAR PRECIO</a>
+</div>
+</div>
+
+<div class="auto-card">
+<img src="img/toro.jpg" alt="Fiat Toro">
+<div class="auto-info">
+<span class="auto-badge">PICK-UP SUP</span>
+<h2>Toro Freedom</h2>
+<p class="auto-desc">La pick-up intermedia vigente en versiones Freedom nafta, con robustez y gran confort.</p>
+<a href="https://wa.me/5491178914211?text=Hola! Me interesa la Toro" class="btn-consultar">CONSULTAR PRECIO</a>
+</div>
+</div>
+
+<div class="auto-card">
+<img src="img/titano.jpg" alt="Fiat Titano">
+<div class="auto-info">
+<span class="auto-badge">PICK-UP MEDIANA</span>
+<h2>Titano Freedom</h2>
+<p class="auto-desc">Potencia y capacidad 4x4. El nuevo estándar de Fiat para el campo y el trabajo.</p>
+<a href="https://wa.me/5491178914211?text=Hola! Me interesa la Titano" class="btn-consultar">CONSULTAR PRECIO</a>
+</div>
+</div>
+
+<div class="auto-card">
+<img src="img/strada.jpg" alt="Fiat Strada">
+<div class="auto-info">
+<span class="auto-badge">PICK-UP URBANA</span>
+<h2>Strada Freedom CD</h2>
+<p class="auto-desc">La pick-up más versátil. Doble cabina para disfrutar el fin de semana.</p>
+<a href="https://wa.me/5491178914211?text=Hola! Me interesa la Strada" class="btn-consultar">CONSULTAR PRECIO</a>
+</div>
+</div>
+
+<div class="auto-card">
+<img src="img/fiorino.jpg" alt="Fiat Fiorino">
+<div class="auto-info">
+<span class="auto-badge">UTILITARIO</span>
+<h2>Fiorino Endurance</h2>
+<p class="auto-desc">Tu herramienta de trabajo incansable. Gran capacidad de carga y eficiencia.</p>
+<a href="https://wa.me/5491178914211?text=Hola! Me interesa la Fiorino" class="btn-consultar">CONSULTAR PRECIO</a>
+</div>
+</div>
+</div>
+</div>
+
+<section class="quiz-box">
+<div class="quiz-content">
+<h2 id="quiz-title">¿Cuál es tu próximo Fiat?</h2>
+<div id="q1" class="quiz-step active">
+<p>1. ¿Qué uso principal le vas a dar?</p>
+<button class="quiz-opt" onclick="next(2, 'Personal')">Uso Personal / Familia</button>
+<button class="quiz-opt" onclick="next(2, 'Trabajo')">Trabajo / Carga</button>
+</div>
+<div id="q2" class="quiz-step">
+<p>2. ¿Tenés un usado para entregar?</p>
+            <button class="quiz-opt" onclick="done('Sí')">Sí, quiero entregar mi auto</button>
+            <button class="quiz-opt" onclick="done('No')">No, quiero financiar el 100%</button>
         </div>
-    </header>
+        <div id="qFinal" class="quiz-step">
+            <h3>¡Excelente elección!</h3>
+            <p>Tengo una oferta especial de cuota fija para vos.</p>
+            <a id="btn-final" href="#" class="btn-consultar">HABLAR CON ASESOR AHORA</a>
+        </div>
+    </div>
+</section>
 
-    <main>
-        <section class="hero">
-            <h1>FIAT CRONOS</h1>
-            <p>EL AUTO MÁS VENDIDO DEL PAÍS</p>
-        </section>
+<footer style="background: #000; color: #fff; text-align: center; padding: 30px;">
+    <p>ASESORAMIENTO OFICIAL FIAT ARGENTINA © 2026</p>
+</footer>
 
-        <section class="model-grid">
-            <div class="model-card">
-                <img src="img/cronos.jpg" alt="Fiat Cronos">
-                <div class="card-content">
-                    <span class="tag">FABRICADO EN CÓRDOBA</span>
-                    <h2>Cronos</h2>
-                    <p>El sedán líder del mercado. Versatilidad, confort y el mejor valor de reventa.</p>
-                    <a href="https://wa.me/5491173686936?text=Hola! Me interesa el Cronos" class="btn">CONSULTAR PRECIO</a>
-                </div>
-            </div>
+<a href="https://wa.me/5491178914211" class="ws-float" target="_blank">W</a>
 
-            <div class="model-card">
-                <img src="img/mobi.jpg" alt="Fiat Mobi">
-                <div class="card-content">
-                    <span class="tag">TREKKING</span>
-                    <h2>Mobi Trekking</h2>
-                    <p>La opción de entrada más económica. Ágil y de bajo consumo para la ciudad.</p>
-                    <a href="https://wa.me/5491173686936?text=Hola! Me interesa el Mobi" class="btn">CONSULTAR PRECIO</a>
-                </div>
-            </div>
-
-            <div class="model-card">
-                <img src="img/fastback.jpg" alt="Fiat Fastback">
-                <div class="card-content">
-                    <span class="tag">NUEVO SUV COUPÉ</span>
-                    <h2>Fastback</h2>
-                    <p>El SUV con silueta crossover es una de las incorporaciones más recientes al catálogo.</p>
-                    <a href="https://wa.me/5491173686936?text=Hola! Me interesa el Fastback" class="btn">CONSULTAR PRECIO</a>
-                </div>
-            </div>
-
-            <div class="model-card">
-                <img src="img/pulse.jpg" alt="Fiat Pulse">
-                <div class="card-content">
-                    <span class="tag">SUV COMPACTO</span>
-                    <h2>Pulse</h2>
-                    <p>Moderno, tecnológico y con gran despeje. El SUV ideal para tu familia.</p>
-                    <a href="https://wa.me/5491173686936?text=Hola! Me interesa el Pulse" class="btn">CONSULTAR PRECIO</a>
-                </div>
-            </div>
-
-            <div class="model-card">
-                <img src="img/toro.jpg" alt="Fiat Toro">
-                <div class="card-content">
-                    <span class="tag">PICK-UP SUP</span>
-                    <h2>Toro Freedom</h2>
-                    <p>La pick-up intermedia vigente en versiones Freedom nafta, con robustez y gran confort.</p>
-                    <a href="https://wa.me/5491173686936?text=Hola! Me interesa la Toro" class="btn">CONSULTAR PRECIO</a>
-                </div>
-            </div>
-
-            <div class="model-card">
-                <img src="img/titano.jpg" alt="Fiat Titano">
-                <div class="card-content">
-                    <span class="tag">PICK-UP MEDIANA</span>
-                    <h2>Titano Freedom</h2>
-                    <p>Potencia y capacidad 4x4. El nuevo estándar de Fiat para el campo y el trabajo.</p>
-                    <a href="https://wa.me/5491173686936?text=Hola! Me interesa la Titano" class="btn">CONSULTAR PRECIO</a>
-                </div>
-            </div>
-
-            <div class="model-card">
-                <img src="img/strada.jpg" alt="Fiat Strada">
-                <div class="card-content">
-                    <span class="tag">PICK-UP URBANA</span>
-                    <h2>Strada Freedom CD</h2>
-                    <p>La pick-up más versátil. Doble cabina para disfrutar el fin de semana.</p>
-                    <a href="https://wa.me/5491173686936?text=Hola! Me interesa la Strada" class="btn">CONSULTAR PRECIO</a>
-                </div>
-            </div>
-
-            <div class="model-card">
-                <img src="img/fiorino.jpg" alt="Fiat Fiorino">
-                <div class="card-content">
-                    <span class="tag">UTILITARIO</span>
-                    <h2>Fiorino Endurance</h2>
-                    <p>Tu herramienta de trabajo incansable. Gran capacidad de carga y eficiencia.</p>
-                    <a href="https://wa.me/5491173686936?text=Hola! Me interesa la Fiorino" class="btn">CONSULTAR PRECIO</a>
-                </div>
-            </div>
-        </section>
-
-        <section class="cta-quiz">
-            <h2>¿Cuál es tu próximo Fiat?</h2>
-            <div class="quiz-container">
-                <p>1. ¿Qué uso principal le vas a dar?</p>
-                <div class="options">
-                    <button>Uso Personal / Familia</button>
-                    <button>Trabajo / Carga</button>
-                </div>
-                <p>2. ¿Tenés un usado para entregar?</p>
-                <div class="options">
-                    <button>Sí, quiero entregar mi auto</button>
-                    <button>No, quiero financiar el 100%</button>
-                </div>
-                <h3>¡Excelente elección!</h3>
-                <p>Tengo una oferta especial de cuota fija para vos.</p>
-                <a href="https://wa.me/5491173686936?text=Hola! Quiero más información sobre las ofertas de cuota fija" class="btn-large">HABLAR CON ASESOR AHORA</a>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <p>ASESORAMIENTO OFICIAL FIAT ARGENTINA © 2026</p>
-    </footer>
-
-    <a href="https://wa.me/5491173686936" class="whatsapp-float" target="_blank">
-        <i class="fab fa-whatsapp"></i>
-    </a>
+<script>
+    let r1 = "";
+    function next(s, v) {
+        r1 = v;
+        document.getElementById('q1').classList.remove('active');
+        document.getElementById('q2').classList.add('active');
+    }
+    function done(r2) {
+        document.getElementById('q2').classList.remove('active');
+        document.getElementById('qFinal').classList.add('active');
+        document.getElementById('btn-final').href = "https://wa.me/5491178914211?text=Hola! Hice el cuestionario web. Busco uso " + r1 + ". Entrego usado: " + r2;
+    }
+</script>
 
 </body>
 </html>
